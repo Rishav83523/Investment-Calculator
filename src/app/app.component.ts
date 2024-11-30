@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
+import { InvestmentInput } from './investmentInput.model';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,7 @@ import { UserComponent } from './user/user.component';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  calculateInvestmentResults(data: {
-    initialInvestment: number;
-    annualInvestment: number;
-    expectedReturn: number;
-    duration: number;
-  }) {
+  calculateInvestmentResults(data: InvestmentInput) {
     const { initialInvestment, annualInvestment, expectedReturn, duration } =
       data;
     const annualData = [];
